@@ -4,6 +4,38 @@ This is a simple blog post demo application build with Next.JS called **Open Blo
 
 By default the application runs on port **3000** and it needs a `Redis` server for storing the blog posts.
 
+# Build process
+
+## Building the application container
+
+To build the application container run:
+
+```
+make build
+```
+
+To start local testing enviroment run
+
+```
+make run
+```
+
+Visit the application at [http://localhost:3000](http://localhost:3000).
+
+To stop the local testing environment run
+
+```
+make stop
+```
+
+For additional make commands see:
+
+```
+make help
+```
+
+# Application setup
+
 ## Prerequisites
 
 The address where the Redis is running needs to be given for the application via _/app/.env.production_ ini-file. Create the file by copy pasting the example below or modify it to your needs.

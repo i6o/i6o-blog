@@ -42,3 +42,9 @@ remove-redis: ## Remove Redis container.
 
 push:  ## Push application container to Docker registry.
 	docker push mikaheim/i6o-blog:latest
+
+compose-up: ## Start the application stack with Docker compose.
+	docker-compose up -d
+
+compose-down: ## Stop the application stack with Docker compose.
+	docker-compose down -v

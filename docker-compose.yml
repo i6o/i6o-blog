@@ -1,0 +1,33 @@
+version: "3.4"
+services:
+  application:
+    build: .
+    image: mikaheim/i6o-blog:latest
+    container_name: i6o-blog
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 3s
+        max_attempts: 3
+        window: 10s
+    ports:
+      - 3000:3000
+    volumes:
+      - ./.env.local.sample:/app/.env.production
+    depends_on:
+      - redis
+    networks:
+      - i6o-blog-net
+  redis:
+    image: redis
+    container_name: redis
+    deploy:
+      replicas: 1
+    ports:
+      - 6379:6379
+    networks:
+      - i6o-blog-net
+networks:
+  i6o-blog-net:
+    driver: bridge

@@ -1,10 +1,18 @@
+import Image from "next/image";
+import logo from "../public/i6o.svg";
+
 export default function Footer() {
   return (
     <>
       <footer>
         <a href="https://i6o.fi" target="_blank" rel="noopener noreferrer">
-          Coded by{" "}
-          <img src="/i6o.svg" alt="i6o - Leaning the Future" className="logo" />
+          Coded by
+          <Image
+            src={logo}
+            height={100}
+            alt="i6o - Leaning the Future"
+            className="logo"
+          />
         </a>
       </footer>
       <style jsx>{`
